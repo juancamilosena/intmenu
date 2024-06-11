@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\Admin_controller;
 use App\Http\Controllers\CartaController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\MenuComidasController;
 
@@ -26,3 +27,5 @@ Route::get('administrador/provedores',[Admin_controller::class,'suppliers']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/MenuComidas', [MenuComidasController::class, 'MenuComida'])->name('MenuComida');
 Route::get('/carta', [CartaController::class, 'carta'])->name('carta');
+
+Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');

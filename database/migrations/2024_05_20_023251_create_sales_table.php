@@ -20,11 +20,11 @@ return new class extends Migration
 
             $table->unsignedBigInteger('detalle_id');
 
-            $table->foreign('detalle_id')
-            ->references('id')
-            ->on('details')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            // $table->foreign('detalle_id')
+            // ->references('id')
+            // ->on('details')
+            // ->onDelete('cascade')
+            // ->onUpdate('cascade');
 
 
             $table->timestamps();

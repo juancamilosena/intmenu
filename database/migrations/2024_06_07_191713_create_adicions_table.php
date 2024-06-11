@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Adicion;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,9 +16,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("name");
-            $table->string("precio_adicion");
+            $table->float("precio_adicion");
             $table->boolean("disponibilidad");
         });
+        // Adicion::create([
+        //     'name' => 'primera',
+        //     'precio_adicion' => '50000.8',
+        //     'disponibilidad' => true,
+        // ]);
     }
 
     /**

@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail extends Model
 {
+    protected $fillable = [
+        'name',
+        'adiciones',
+        'comentarios',
+        'precio',
+        'cantidad'
+    ];
+
     use HasFactory;
     public function mesa(){
         return $this->belongsTo('App\Models\Table');

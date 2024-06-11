@@ -17,7 +17,7 @@ return new class extends Migration
             $table->float('precio');
             $table->text('descripcion');
             $table->boolean('disponibilidad')->default(true);
-
+            $table->timestamps();
        
 
         });
