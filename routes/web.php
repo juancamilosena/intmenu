@@ -24,5 +24,5 @@ Route::get('administrador/provedores',[Admin_controller::class,'suppliers']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/carta', [CartaController::class, 'carta'])->name('carta');
 Route::get('/MenuComidas', [MenuComidasController::class, 'MenuComida'])->name('MenuComida');
+Route::get('/carta', [CartaController::class, 'carta'])->name('carta');

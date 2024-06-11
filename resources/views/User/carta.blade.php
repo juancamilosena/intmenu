@@ -25,52 +25,103 @@
         <div class="container-cartas">
             <div class="row">
                 @foreach ($products as $product)
-                    <!-- modal pedido -->
-                    <div class="modal fade" id="hamburguesa{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="ModalComidas modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5 text-light fw-bolder" id="exampleModalLabel">{{$product->name}}</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-
-
-                                <div class="adiciones-modal d-flex">
-                                    <form action="{{route('carta')}}" method="POST">
-                                        @csrf
-                                        <img class="img-comida" src="{{ asset('/img/hamburguesa.jpg') }}" class="card-img-top"
-                                        alt="Imagen 1">
-                                        <label class="text-light p-3 fw-bolder" for="cars">Adiciones</label>
-                                        <select name="cars" id="cars">
-                                            <label>
-                                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                                            </label>
-                                            @foreach ($adiciones as $adicion)
-                                                <option value="{{$adicion->id}}">{{$adicion->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <label class="text-light p-3 w-1 h-10 fw-bolder fw-bolder" for="text">Catidad
-                                            &nbsp;
-                                            &nbsp;</label>
-                                        <input type="number" id="tentacles" name="tentacles" min="1"
-                                            max="100" />
-                                    </form>
-                                </div>
-                                
-
+                <!-- modal pedido -->
+                <div class="modal fade" id="hamburguesa{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl text-bg-dark modal-dialog-centered modal-dialog-scrollable modal-full-height-bottom">
+                        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5 text-light fw-bolder" id="exampleModalLabel">{{$product->name}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6 d-flex align-items-start justify-content-start">
+                                        <img class="img-comida" src="{{ asset('/img/hamburguesa.jpg') }}" class="card-img-top" alt="Imagen 1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Contenido del modal -->
+                                        <form action="{{route('carta')}}" method="POST">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold " for="cars">Adiciones</label>
+                                                <select name="cars" id="cars" class="form-select">
+                                                    @foreach ($adiciones as $adicion)
+                                                    <option value="{{$adicion->id}}">{{$adicion->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold" for="comment">Comentarios</label>
+                                                <textarea class="form-control" id="comment" rows="3" placeholder="Sugerencias" ></textarea>
+                                            </div>
+                
+                                            <div class="mb-3"> 
+                                                <p class="card-text text-success">${{ $product->precio }}</p>
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold" for="tentacles">Cantidad</label>
+                                                <input type="number" id="tentacles" name="tentacles" class=" form-control-sm rounded-pill custom-input" min="1" max="100" />
+                                            </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-warning">
-                                    <img class="boton-carrito" src="img/carrito02.png" alt="">
-                                </button>
+                                            <div class="mb-3" >
+                                                <label class="text-light fw-bold" for="">Calificacio</label>
+                                                <div class="rating">
+                                                    <input type="radio" id="star5" name="rating" value="5" />
+                                                    <label for="star5" title="5 stars">&#9733;</label>
+                                                    <input type="radio" id="star4" name="rating" value="4" />
+                                                    <label for="star4" title="4 stars">&#9733;</label>
+                                                    <input type="radio" id="star3" name="rating" value="3" />
+                                                    <label for="star3" title="3 stars">&#9733;</label>
+                                                    <input type="radio" id="star2" name="rating" value="2" />
+                                                    <label for="star2" title="2 stars">&#9733;</label>
+                                                    <input type="radio" id="star1" name="rating" value="1" />
+                                                    <label for="star1" title="1 star">&#9733;</label>
+                                                  </div>
+                                            </div>
+
+                                              
+                                            
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row"> <!-- Cambios aquí -->
+                                <!-- Botones de pie de página -->
+                                <div class="mb-3 mb-md-0">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        <img class="boton-carrito text-light" src="img/izquierda.png" alt=""></button>
+                                </div>
+                                <div class="mb-3 mb-md-0">
+                                    <button type="button" class="btn btn-warning">
+                                        <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
+                                    </button>
+                                </div>
+                                <div class="mb-3 mb-md-0">
+                                    <button type="button" class="btn btn-warning">
+                                        <img class="boton-carrito text-light" src="img/agregar-a-carrito-de-compras.png" alt="">Add
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-warning">
+                                        <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+
+                
+                   
                     <!-- Tarjeta 1 -->
                     <div class="col-md-3 mb-4">
                         <div class="carta-edit">
@@ -79,9 +130,11 @@
                             <div class="card-body">
                                 <h5 class="card-title text-light">{{ $product->name }}</h5>
                                 <p class="card-text text-light">{{ $product->descripcion }}</p>
-                                <p class="card-text text-light"{{ $product->precio }}></p>
-                                <p class="card-text text-light">{{ $product->disponibilidad }} <span id="count1">10</span></p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <p class="card-text text-success">${{ $product->precio }}</p>
+                                <p class="card-text text-light">Disponible: {{ $product->disponibilidad }}
+                                    <br>
+                                    <br>
+                                <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal"
                                     data-bs-target="#hamburguesa{{$product->id}}">
                                     Personalizar
                                 </button>
@@ -89,6 +142,8 @@
                         </div>
                     </div>
                 @endforeach
+
+                
 
             </div>
         </div>

@@ -163,6 +163,8 @@ border-bottom-right-radius: .3rem;
     padding: 6%;
   }
 
+  
+
 
 
 
@@ -491,3 +493,53 @@ footer{
     align-items: center;
     height: 100vh; /* Esto centra verticalmente en la pantalla */
 }
+
+
+.modal-dialog {
+    margin: auto;
+    max-width: 50%;
+    bottom: 0;
+    top: auto;
+}
+
+@media (max-width: 992px) {
+    .modal-dialog {
+        max-width: 100%;
+    }
+}
+
+.modal-full-height-bottom {
+    margin: auto;
+    max-width: 100%;
+    bottom: 0;
+    top: auto;
+}
+
+.custom-input {
+    width: 50px; /* ajusta el ancho según sea necesario */
+    font-size: 10px; /* ajusta el tamaño de fuente según sea necesario */
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating > input {
+    display: none;
+  }
+  .rating > label {
+    display: inline-block;
+    padding: 5px;
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  .rating > label:hover,
+  .rating > label:hover ~ label,
+  .rating > input:checked ~ label {
+    color: #ffc107;
+  }
+  .rating > input:checked ~ label:hover,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ff0;
+  }

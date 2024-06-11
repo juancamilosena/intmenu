@@ -29,20 +29,20 @@
         <section class="contenedor1">
             <div id="" class="contenedor1-content">
                 <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/perro02.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida02.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida03.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida04.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida05.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida07.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/perro03.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/burrito01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/lasaña01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/sandwich01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/pizza01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/comida01.jpg') }}" alt=""></a>
         </section>
 
 
@@ -57,21 +57,18 @@
 
         <section class="contenedor2">
             <div id="" class="contenedor2-content">
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre10.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre02.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre03.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre04.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre05.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre06.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre07.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre08.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre09.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre10.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre11.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/postre12.jpg') }}" alt=""></a>
         </section>
 
         <section>
@@ -85,21 +82,18 @@
 
         <section class="contenedor3">
             <div id="bebida" class="contenedor3-content">
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
-                <a href="{{ route('carta') }}"><img src="{{ asset('img/hamburguesa.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida07.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida08.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida09.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida10.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida11.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida12.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/cocacola01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/limonada01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/naranja01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/frutos rojos01.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida11.jpg') }}" alt=""></a>
+                <a href="{{ route('carta') }}"><img src="{{ asset('img/bebida12.jpg') }}" alt=""></a>
         </section>
 
 
