@@ -13,8 +13,8 @@ class CartaController extends Controller
     public function carta(){
         $products = Product::all();
         $adiciones = Adicion::all();
-        $detalles = Detail::all();
+        // $detalles = Detail::all();
         // dd($productos);
-        return view('User.carta', compact('products','adiciones,details'));
+        return view('User.carta', compact('products','adiciones'));
     }
 }

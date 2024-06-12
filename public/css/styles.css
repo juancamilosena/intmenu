@@ -543,3 +543,13 @@ footer{
   .rating > label:hover ~ input:checked ~ label {
     color: #ff0;
   }
+
+ 
+
+.custom-modal-position .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}

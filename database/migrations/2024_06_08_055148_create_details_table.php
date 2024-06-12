@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->id();
             // $table->string('name');
-            // $table->string('adiciones');
+            $table->string('adiciones');
             $table->text('comentarios');
             // $table->float('precio');
             $table->integer('cantidad');
@@ -28,13 +28,13 @@ return new class extends Migration
             // ->onDelete('cascade')
             // ->onUpdate('cascade');
 
-            $table->foreignId("adicion_id")
-            ->nullable()
-            ->constrained(
-                table: 'adicions', indexName: 'id'
-            )
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            // $table->foreignId("adicion_id")
+            // ->nullable()
+            // ->constrained(
+            //     table: 'adicions', indexName: 'id'
+            // )
+            // ->onDelete('cascade')
+            // ->onUpdate('cascade');
 
             $table->foreignId('orden_id')
             ->nullable()

@@ -34,97 +34,76 @@
                 @foreach ($products as $product)
                 
                 <!-- modal pedido -->
-                <div class="modal fade" id="hamburguesa{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl text-bg-dark modal-dialog-centered modal-dialog-scrollable modal-full-height-bottom">
-                        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5 text-light fw-bolder" id="exampleModalLabel">{{$product->name}}</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              
+<div class="modal fade custom-modal-position" id="hamburguesa{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl text-bg-dark modal-dialog-scrollable modal-full-height-bottom">
+        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-light fw-bolder" id="exampleModalLabel">{{$product->name}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-start justify-content-start">
+                        <img class="img-comida" src="{{ asset('/img/hamburguesa.jpg') }}" class="card-img-top" alt="Imagen 1">
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Contenido del modal -->
+                        <form action="{{route('detail.store')}}" method="POST" id="form_carta_{{$product->id}}">
+                            @csrf
+                            <div class="mb-3">
+                                <label class="text-light fw-bold " for="cars">Adiciones</label>
+                                <select name="adiciones" id="cars" class="form-select">
+                                    @foreach ($adiciones as $adicion)
+                                    <option value="{{$adicion->id}}">{{$adicion->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-6 d-flex align-items-start justify-content-start">
-                                        <img class="img-comida" src="{{ asset('/img/hamburguesa.jpg') }}" class="card-img-top" alt="Imagen 1">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <!-- Contenido del modal -->
-                                        <form action="{{route('detail.store')}}" method="POST" id="form_carta_{{$product->id}}">
-                                            @csrf
-                                            {{-- <input type="text" value="" hidden> --}}
-                                            <div class="mb-3">
-                                                <label class="text-light fw-bold " for="cars">Adiciones</label>
-                                                <select name="adiciones" id="cars" class="form-select">
-                                                    @foreach ($adiciones as $adicion)
-                                                    <option value="{{$adicion->id}}">{{$adicion->name}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="text-light fw-bold" for="comment">Comentarios</label>
-                                                <textarea name="comentarios" class="form-control" id="comment" rows="3" placeholder="Sugerencias" ></textarea>
-                                            </div>
-                
-                                            <div class="mb-3"> 
-                                                <p class="card-text text-success">${{ $product->precio }}</p>
-                                            </div>
-                
-                                            <div class="mb-3">
-                                                <label class="text-light fw-bold" for="tentacles">Cantidad</label>
-                                                <input type="number" id="tentacles" name="cantidad" class=" form-control-sm rounded-pill custom-input" min="1" max="100" />
-                                            </div>
-
-                                            <input type="text" name="id_producto" value="{{$product->id}}" hidden>
-
-                                            {{-- <div class="mb-3" >
-                                                <label class="text-light fw-bold" for="">Calificacio</label>
-                                                <div class="rating">
-                                                    <input type="radio" id="star5" name="rating" value="5" />
-                                                    <label for="star5" title="5 stars">&#9733;</label>
-                                                    <input type="radio" id="star4" name="rating" value="4" />
-                                                    <label for="star4" title="4 stars">&#9733;</label>
-                                                    <input type="radio" id="star3" name="rating" value="3" />
-                                                    <label for="star3" title="3 stars">&#9733;</label>
-                                                    <input type="radio" id="star2" name="rating" value="2" />
-                                                    <label for="star2" title="2 stars">&#9733;</label>
-                                                    <input type="radio" id="star1" name="rating" value="1" />
-                                                    <label for="star1" title="1 star">&#9733;</label>
-                                                  </div>
-                                            </div> --}}
-
-                                              
-                                            
-                                            
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="mb-3">
+                                <label class="text-light fw-bold" for="comment">Comentarios</label>
+                                <textarea name="comentarios" class="form-control" id="comment" rows="3" placeholder="Sugerencias"></textarea>
                             </div>
-                            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row"> <!-- Cambios aquí -->
-                                <!-- Botones de pie de página -->
-                                <div class="mb-3 mb-md-0">
-                                  <a href="/MenuComidas"> <img src="img/izquierda.png" alt=""></a>
-                                </div>
 
-                                <div class="mb-3 mb-md-0">
-                                   <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                    data-bs-target="#orden" >
-                                        <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
-                                    </button> 
-                                </div>
-
-                                <div class="mb-3 mb-md-0">
-                                    <button type="button" class="btn btn-warning" onclick="document.getElementById('form_carta_{{$product->id}}').submit();">
-                                        <img class="boton-carrito text-light" src="img/agregar-a-carrito-de-compras.png" alt="">Add
-                                    </button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-warning">
-                                        <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
-                                    </button>
-                                </div>
+                            <div class="mb-3">
+                                <p class="card-text text-success">${{ $product->precio }}</p>
                             </div>
-                        </div>
+
+                            <div class="mb-3">
+                                <label class="text-light fw-bold" for="tentacles">Cantidad</label>
+                                <input type="number" id="tentacles" name="cantidad" class="form-control-sm rounded-pill custom-input" min="1" max="100" />
+                            </div>
+
+                            <input type="text" name="id_producto" value="{{$product->id}}" hidden>
+                        </form>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <div class="mb-3 mb-md-0">
+                    <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
+                </div>
+                <div class="mb-3 mb-md-0">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orden">
+                        <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
+                    </button>
+                </div>
+                <div class="mb-3 mb-md-0">
+                    <button type="button" class="btn btn-warning" onclick="document.getElementById('form_carta_{{$product->id}}').submit();">
+                        <img class="boton-carrito text-light" src="img/agregar-a-carrito-de-compras.png" alt="">Add
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-warning">
+                        <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 
@@ -180,14 +159,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <!-- Contenido del modal -->
-                                        <form action="{{route('carta')}}" method="POST">
-                                            @csrf
-
-                                            <h5 class="card-title text-light">{{ $detalles->adiciones }}</h5>
-                                            <p class="card-text text-light">{{ $detalles->comentarios }}</p>
-                                            <p class="card-text text-light">${{ $detalles->cantidad}}</p>
-                                            <p class="card-text text-light">{{$adicion->id}}">{{$adicion->name}}</p>
-                                            
+                                        
                                             
 
                                               

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DetailController extends Controller
 {
     public function store(Request $request){
-        $detalle = Detail::create($request->except(['_token','id_producto']));
+        $detalle = Detail::create($request->except(['_token','product_id']));
         $detalle->producto()->attach($request->id_producto);
     }
 }
