@@ -14,20 +14,9 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
 
             $table->id();
-            // $table->string('name');
             $table->string('adiciones');
             $table->text('comentarios');
-            // $table->float('precio');
             $table->integer('cantidad');
-            // $table->unsignedBigInteger('orden_id');
-            // $table->unsignedBigInteger('admin_id');
-
-            // $table->foreign('orden_id')
-            // ->references('id')
-            // ->on('orders')
-            // ->onDelete('cascade')
-            // ->onUpdate('cascade');
-
             // $table->foreignId("adicion_id")
             // ->nullable()
             // ->constrained(
