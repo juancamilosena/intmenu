@@ -14,33 +14,26 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
 
             $table->id();
-            $table->string('adiciones');
-            $table->text('comentarios');
-            $table->integer('cantidad');
-            // $table->foreignId("adicion_id")
+            $table->string('adiciones')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->integer('cantidad')->nullable();
+            $table->timestamps();
+
+            // $table->foreignId('orden_id')
             // ->nullable()
             // ->constrained(
-            //     table: 'adicions', indexName: 'id'
+            //     table: 'orders', indexName: 'id'
             // )
             // ->onDelete('cascade')
             // ->onUpdate('cascade');
 
-            $table->foreignId('orden_id')
-            ->nullable()
-            ->constrained(
-                table: 'orders', indexName: 'id'
-            )
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
             
-            $table->foreignId('admin_id')
-            ->nullable()
-            ->constrained()
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            // $table->foreignId('admin_id')
+            // ->nullable()
+            // ->constrained()
+            // ->onDelete('cascade')
+            // ->onUpdate('cascade');
             
-            $table->timestamps();
         });
 
 

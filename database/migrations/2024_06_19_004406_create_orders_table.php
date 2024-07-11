@@ -13,17 +13,25 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string("estado");
+            $table->string("estado")->nullable();
             $table->timestamp('fecha_de_pedido');
             //foraneas
 
-            $table->unsignedBigInteger('table_id');
-
+            $table->unsignedBigInteger('table_id')
+            ->nullable();
             $table->foreign('table_id')
             ->references('id')
             ->on('tables')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+
+             $table->foreignId('detail_id')
+            ->nullable()
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            
+            $table->timestamps();
             
             
         });

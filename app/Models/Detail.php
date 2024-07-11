@@ -22,7 +22,7 @@ class Detail extends Model
 
     }
     public function orden(){
-        return $this->belongsTo('App\Models\Order');
+        return $this->hasOne('App\Models\Order');
     }
 
    

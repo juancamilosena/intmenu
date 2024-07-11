@@ -17,7 +17,7 @@ class Order extends Model
 
     public function detail(){
 
-        return $this->hasOne('App\Models\Detail');
+        return $this->belongsTo('App\Models\Detail');
 
     }
    

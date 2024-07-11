@@ -8,7 +8,12 @@
     <link rel="shortcut icon" href="img/logofinal.png" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 </head>
 
 <body class="carta-body bg-dark">
@@ -74,6 +79,9 @@
                             </div>
 
                             <input type="text" name="id_producto" value="{{$product->id}}" hidden>
+                            {{-- <input type="text" name="id_orden" value="{{$orden->id}}" hidden> --}}
+
+
                         </form>
                     </div>
                 </div>
@@ -159,6 +167,31 @@
                                     </div>
                                     <div class="col-md-6">
                                         <!-- Contenido del modal -->
+                                          <form action="">
+                                            <table class="table table-striped table-bordered table-hover col p-4 ">
+                          
+                                                <thead class="bg-ingo text-white ">
+                                                  <tr>
+                                                    <th scope="col">Id</th>
+                                                    <th scope="col">adiciones</th>
+                                                    <th scope="col">comentarios</th>
+                                                    <th scope="col">cantidad</th>
+                                                    <th></th>
+                                                   
+                                                    
+                                                  </tr>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    @foreach ($pedido as $item)
+                                                    <tr>
+                                                        <th>{{$item->id}}</th>
+                                                        <td>{{$item->adiciones}}</td>
+                                                        <td>{{$item->comentarios}}</td>
+                                                        <td>{{$item->cantidad}}</td>
+                                                        <td><a  href="{{route("delete",$item->id)}}" class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i></a></td>
+
+                                            </table>
+                                          </form>
                                         
                                             
 

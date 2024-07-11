@@ -26,6 +26,8 @@ Route::get('administrador/provedores',[Admin_controller::class,'suppliers']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/MenuComidas', [MenuComidasController::class, 'MenuComida'])->name('MenuComida');
+
 Route::get('/carta', [CartaController::class, 'carta'])->name('carta');
+Route::get('/carta/delete-{id}',[CartaController::class,'delete'])->name('delete');
 
 Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
