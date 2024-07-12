@@ -9,7 +9,7 @@ class Detail extends Model
 {
     protected $fillable = [
         'name',
-        'adiciones',
+        'adicion',
         'comentarios',
         'precio',
         'cantidad'

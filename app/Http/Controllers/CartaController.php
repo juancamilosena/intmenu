@@ -14,19 +14,21 @@ class CartaController extends Controller
     public function carta(){
         $products = Product::all();
         $adiciones = Adicion::all();
-        return view('User.carta', compact('products','adiciones'));
+        $pedidos = Detail::all();
+        return view('User.carta', compact('products','adiciones','pedidos'));
     }
+    // public function pedido(){
+    //     $pedidos=DB::select("SELECT * from details;");
+    //     dd($pedidos);
+    //     return view("user.carta",compact('pedidos'));
+    // }
 
-    public function pedido(){
-        $pedido=DB::select("SELECT * from details;");
-        return view("user.carta")->with("pedido", $pedido);
-    }
 
 
     public function delete($id){
 
         try{
-            $sql=DB::delete("delete from  employees where id=$id");
+            $sql=DB::delete("delete from  details where id=$id");
              
 
         }catch(\Throwable $th){

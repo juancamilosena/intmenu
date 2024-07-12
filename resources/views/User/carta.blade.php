@@ -79,7 +79,7 @@
                             </div>
 
                             <input type="text" name="id_producto" value="{{$product->id}}" hidden>
-                            {{-- <input type="text" name="id_orden" value="{{$orden->id}}" hidden> --}}
+                            
 
 
                         </form>
@@ -152,7 +152,6 @@
 
 
                 <!--Modal check out-->
-
                 <div class="modal fade" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl text-bg-dark modal-dialog-centered modal-dialog-scrollable modal-full-height-bottom">
                         <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
@@ -162,50 +161,49 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col-md-6 d-flex align-items-start justify-content-start">
-                                        
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-12">
                                         <!-- Contenido del modal -->
-                                          <form action="">
-                                            <table class="table table-striped table-bordered table-hover col p-4 ">
-                          
-                                                <thead class="bg-ingo text-white ">
-                                                  <tr>
-                                                    <th scope="col">Id</th>
-                                                    <th scope="col">adiciones</th>
-                                                    <th scope="col">comentarios</th>
-                                                    <th scope="col">cantidad</th>
-                                                    <th></th>
-                                                   
-                                                    
-                                                  </tr>
-                                                </thead>
-                                                <tbody class="table-group-divider">
-                                                    @foreach ($pedido as $item)
-                                                    <tr>
-                                                        <th>{{$item->id}}</th>
-                                                        <td>{{$item->adiciones}}</td>
-                                                        <td>{{$item->comentarios}}</td>
-                                                        <td>{{$item->cantidad}}</td>
-                                                        <td><a  href="{{route("delete",$item->id)}}" class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i></a></td>
-
-                                            </table>
-                                          </form>
-                                        
-                                            
-
-                                              
-                                            
-                                            
+                                        <form>
+                                            @csrf
+                                            <div class="checkout-table">
+                                                <table class="table table-striped table-bordered table-hover w-100">
+                                                    <thead class="bg-ingo text-white">
+                                                        <tr>
+                                                            <th scope="col">Id</th>
+                                                            <th scope="col">Adiciones</th>
+                                                            <th scope="col">Comentarios</th>
+                                                            <th scope="col">Cantidad</th>
+                                                            <th scope="col">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        @foreach($pedidos as $pedido)
+                                                        <tr>
+                                                            <th>{{$pedido->id}}</th>
+                                                           {{-- @foreach($adiciones as $adicion)
+                                                           <p>{{$adicion->id}}>{{$adicion->name}}</p>     
+                                                           @endforeach --}}
+                                                           <td>{{$pedido->adiciones}}</td>
+                                                            <td>{{$pedido->comentarios}}</td>
+                                                            <td>{{$pedido->cantidad}}</td>
+                                                            <td>
+                                                                <a href="{{route('delete', $pedido->id)}}" class="btn btn-danger btn-sm">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
-                            </div> 
-                            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row"> <!-- Cambios aquí -->
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row">
                                 <!-- Botones de pie de página -->
                                 <div class="mb-3 mb-md-0">
-                                  <a href="/MenuComidas"> <img src="img/izquierda.png" alt=""></a>
+                                    <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
                                 </div>
                                 <div class="mb-3 mb-md-0">
                                     <button type="button" class="btn btn-warning">
@@ -226,6 +224,7 @@
                         </div>
                     </div>
                 </div>
+                
                 
                 
                 
@@ -293,9 +292,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
