@@ -515,34 +515,7 @@ footer{
     top: auto;
 }
 
-.custom-input {
-    width: 50px; /* ajusta el ancho según sea necesario */
-    font-size: 10px; /* ajusta el tamaño de fuente según sea necesario */
-}
 
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-  }
-  .rating > input {
-    display: none;
-  }
-  .rating > label {
-    display: inline-block;
-    padding: 5px;
-    font-size: 25px;
-    color: #ccc;
-    cursor: pointer;
-  }
-  .rating > label:hover,
-  .rating > label:hover ~ label,
-  .rating > input:checked ~ label {
-    color: #ffc107;
-  }
-  .rating > input:checked ~ label:hover,
-  .rating > label:hover ~ input:checked ~ label {
-    color: #ff0;
-  }
 
  
 
@@ -553,3 +526,35 @@ footer{
     transform: translate(-50%, -50%);
     margin: 0;
 }
+
+
+.custom-modal-bottom .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+.custom-modal-bottom .modal-content {
+    border-radius: 0;
+}
+
+.custom-modal-bottom .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+    width: 90%; /* Ajusta el ancho del modal aquí */
+    max-width: 600px; /* Ancho máximo para hacer el modal más angosto */
+    height: auto;
+}
+
+.custom-modal-bottom .modal-content {
+    border-radius: 0;
+}
+
+
+
+
+

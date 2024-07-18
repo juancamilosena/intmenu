@@ -17,11 +17,7 @@ class CartaController extends Controller
         $pedidos = Detail::all();
         return view('User.carta', compact('products','adiciones','pedidos'));
     }
-    // public function pedido(){
-    //     $pedidos=DB::select("SELECT * from details;");
-    //     dd($pedidos);
-    //     return view("user.carta",compact('pedidos'));
-    // }
+   
 
 
 
