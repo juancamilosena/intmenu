@@ -7,6 +7,12 @@
     <link rel="shortcut icon" href="img/logofinal.png" type="image/x-icon">
     <link rel="stylesheet" href="{{asset("css/styles.css")}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <title>Int Menu</title>
 </head>
 <body class="bg-dark">
@@ -16,16 +22,16 @@
             <img src="{{ asset('/img/logofinal.png') }}" alt="">
         </div>
         </section> 
-    </header>
-
-    <section>
-        <div class="mb-3 mb-md-0">
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-             data-bs-target="#orden" >
-                 <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
-             </button> 
-         </div>
-    </section>
+        </header>
+        
+        <section class="my-4 d-flex justify-content-center">
+            <div class="mb-3 mb-md-0">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                 data-bs-target="#orden" >
+                     <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
+                 </button> 
+             </div>
+        </section>
 
      <!--Modal check out-->
      <div class="modal fade custom-modal-bottom" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,16 +87,6 @@
                     <div class="mb-3 mb-md-0">
                         <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
                     </div>
-                    <div class="mb-3 mb-md-0">
-                        <button type="button" class="btn btn-warning">
-                            <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
-                        </button>
-                    </div>
-                    <div class="mb-3 mb-md-0">
-                        <button type="button" class="btn btn-warning">
-                            <img class="boton-carrito text-light" src="img/agregar-a-carrito-de-compras.png" alt="">Add
-                        </button>
-                    </div>
                     <div>
                         <button type="button" class="btn btn-warning">
                             <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
@@ -102,12 +98,12 @@
     </div>
         
 
-        <section>
-            <div class="contenedor1-txt1">
-                <h2 class="text-light">Comida Rapida</h2>
-                <img src="img/icono-comidas.png" alt="">
-            </div>
-        </section>
+    <section class="my-4">
+        <div class="contenedor1-txt1">
+            <h2 class="text-light">Comida Rápida</h2>
+            <img src="img/icono-comidas.png" alt="">
+        </div>
+    </section>
 
         <section class="contenedor1">
             <div id="" class="contenedor1-content">
@@ -129,13 +125,11 @@
         </section>
 
 
-        <section>
-
+        <section class="my-4">
             <div class="contenedor2-txt2">
                 <h2 class="text-light">Postres</h2>
                 <img src="img/icono-postres.png" alt="">
             </div>
-
         </section>
 
         <section class="contenedor2">
@@ -154,13 +148,11 @@
                 <a href="{{ route('carta') }}"><img src="{{ asset('img/postre12.jpg') }}" alt=""></a>
         </section>
 
-        <section>
-
-            <div class="cotenedor3-txt3">
+        <section class="my-4">
+            <div class="contenedor3-txt3">
                 <h2 class="text-light">Bebidas</h2>
                 <img src="img/icono-bebidas.png" alt="">
             </div>
-
         </section>
 
         <section class="contenedor3">

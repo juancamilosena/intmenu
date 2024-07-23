@@ -201,6 +201,13 @@ border-bottom-right-radius: .3rem;
   
 
 /*css user*/
+
+body {
+    background: linear-gradient(45deg,#000000, #0e0d0d,#1a1919,#181717,#000000);
+    height: 100vh;
+    margin: 0;
+  }
+  
   .cabecera{
     background-size: cover;
     background-attachment: fixed;
@@ -209,7 +216,7 @@ border-bottom-right-radius: .3rem;
 
 .cabecera{
     background-size: cover;
-    height: 75vh;
+    height: 45vh;
 
 }
 
@@ -554,7 +561,16 @@ footer{
     border-radius: 0;
 }
 
+.contenedor1-txt1, .contenedor2-txt2, .contenedor3-txt3 {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: flex-start; /* Centrar horizontalmente */
+    gap: 10px; /* Espacio entre elementos, ajusta según sea necesario */
+}
 
-
+.contenedor1-txt1 img, .contenedor2-txt2 img, .contenedor3-txt3 img {
+    max-width: 100px; /* Ajusta el tamaño de la imagen si es necesario */
+    height: auto;
+}
 
 

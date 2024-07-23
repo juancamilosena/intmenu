@@ -25,19 +25,22 @@
             </div>
         </section>
     </header>
-    
-    <section>
+
+
+
+    <section class="my-4 d-flex justify-content-center" style="height: 30vh;" >
         <div class="mb-3 mb-md-0">
             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
              data-bs-target="#orden" >
                  <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
-             </button> 
+                 </button> 
+                <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
          </div>
-    
-         <div class="mb-3 mb-md-0">
-            <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
-        </div>
+        <div class="mb-3 mb-md-0">
+       </div>
     </section>
+
+    
 
 
     <section class="contenedor-tarjetas">
@@ -212,16 +215,6 @@
                                 <!-- Botones de pie de página -->
                                 <div class="mb-3 mb-md-0">
                                     <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
-                                </div>
-                                <div class="mb-3 mb-md-0">
-                                    <button type="button" class="btn btn-warning">
-                                        <img class="boton-carrito text-light" src="img/car2.png" alt="">Check out
-                                    </button>
-                                </div>
-                                <div class="mb-3 mb-md-0">
-                                    <button type="button" class="btn btn-warning">
-                                        <img class="boton-carrito text-light" src="img/agregar-a-carrito-de-compras.png" alt="">Add
-                                    </button>
                                 </div>
                                 <div>
                                     <button type="button" class="btn btn-warning">
