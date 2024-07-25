@@ -81,6 +81,7 @@
                 
                                             <div class="mb-3">
                                                 <p class="card-text text-success">${{ $product->precio }}</p>
+                                                
                                             </div>
                 
                                             <div class="mb-3">
@@ -180,9 +181,10 @@
                                                 <table class="table table-striped table-bordered table-hover w-100">
                                                     <thead class="bg-ingo text-white">
                                                         <tr>
-                                                            <th scope="col">Id</th>
+                                                            <th scope="col">Producto</th>
                                                             <th scope="col">Adiciones</th>
                                                             <th scope="col">Comentarios</th>
+                                                            <th scope="col">Precio</th>
                                                             <th scope="col">Cantidad</th>
                                                             <th scope="col">Acciones</th>
                                                         </tr>
@@ -196,6 +198,7 @@
                                                            @endforeach --}}
                                                            <td>{{$pedido->adiciones}}</td>
                                                             <td>{{$pedido->comentarios}}</td>
+                                                            <td>{{$pedido->precio}}</td>
                                                             <td>{{$pedido->cantidad}}</td>
                                                             <td>
                                                                 <a href="{{route('delete', $pedido->id)}}" class="btn btn-danger btn-sm">

@@ -203,7 +203,7 @@ border-bottom-right-radius: .3rem;
 /*css user*/
 
 body {
-    background: linear-gradient(45deg,#000000, #0e0d0d,#1a1919,#181717,#000000);
+    background: linear-gradient(45deg,#000000, #0e0d0d,#1a1919,#181717,#e40909);
     height: 100vh;
     margin: 0;
   }
