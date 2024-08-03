@@ -16,8 +16,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("name");
-            $table->float("precio_adicion");
-            $table->boolean("disponibilidad");
+            $table->float("precio");
         });
         // Adicion::create([
         //     'name' => 'primera',

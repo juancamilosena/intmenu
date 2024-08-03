@@ -7,6 +7,7 @@ use App\Http\Controllers\CartaController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\MenuComidasController;
+use App\Http\Controllers\OrderController;
 
 // Route::get('/',Logincontroller::class);
 Route::get('/', function () {
@@ -31,3 +32,4 @@ Route::get('/carta', [CartaController::class, 'carta'])->name('carta');
 Route::get('/carta/delete-{id}',[CartaController::class,'delete'])->name('delete');
 
 Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
+Route::post('/create-order', [OrderController::class, 'createOrder'])->name('order.create');

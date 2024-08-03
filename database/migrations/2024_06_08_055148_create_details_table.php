@@ -6,44 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('details', function (Blueprint $table) {
-
             $table->id();
-            $table->string('adiciones')->nullable();
-            $table->text('comentarios')->nullable();
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('adicion_id')->nullable();
             $table->integer('cantidad')->nullable();
+            $table->text('comentarios')->nullable(); 
             $table->timestamps();
 
-            // $table->foreignId('orden_id')
-            // ->nullable()
-            // ->constrained(
-            //     table: 'orders', indexName: 'id'
-            // )
-            // ->onDelete('cascade')
-            // ->onUpdate('cascade');
-
-            
-            // $table->foreignId('admin_id')
-            // ->nullable()
-            // ->constrained()
-            // ->onDelete('cascade')
-            // ->onUpdate('cascade');
-            
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('adicion_id')->references('id')->on('adicions')->onDelete('set null'); 
         });
-
-
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('detail_orders');
+        Schema::dropIfExists('details');
     }
 };
+

@@ -9,19 +9,22 @@ class Order extends Model
 {
     use HasFactory;
 
-    public function table(){
-        return $this->belongsTo('App\Models\Table');
+    // Añade aquí los atributos que se pueden asignar masivamente
+    protected $fillable = [
+        'user_id', // u otro atributo relevante que ya tengas
+        'status',
+        // otros atributos que quieras permitir asignar masivamente
+    ];
 
-
+    public function details()
+    {
+        return $this->hasMany(Detail::class);
     }
 
-    public function detail(){
-
-        return $this->belongsTo('App\Models\Detail');
-
+    // Relación con las adiciones del pedido
+    public function orderAdditions()
+    {
+        return $this->hasMany(OrderAdicion::class);
     }
-   
-    
-
 
 }

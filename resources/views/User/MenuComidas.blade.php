@@ -33,8 +33,8 @@
              </div>
         </section>
 
-     <!--Modal check out-->
-     <div class="modal fade custom-modal-bottom" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--Modal check out-->
+    <div class="modal fade custom-modal-bottom" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog custom-modal-dialog modal-xl  modal-dialog-centered modal-dialog-scrollable modal-full-height-bottom">
             <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
                 <div class="modal-header">
@@ -52,7 +52,8 @@
                                         <thead class="bg-ingo text-white">
                                             <tr>
                                                 <th scope="col">Id</th>
-                                                <th scope="col">Adiciones</th>
+                                                <th scope="col">Producto</th>
+                                                <th scope="col">Adición</th>
                                                 <th scope="col">Comentarios</th>
                                                 <th scope="col">Cantidad</th>
                                                 <th scope="col">Acciones</th>
@@ -62,10 +63,22 @@
                                             @foreach($pedidos as $pedido)
                                             <tr>
                                                 <th>{{$pedido->id}}</th>
-                                               {{-- @foreach($adiciones as $adicion)
-                                               <p>{{$adicion->id}}>{{$adicion->name}}</p>     
-                                               @endforeach --}}
-                                               <td>{{$pedido->adiciones}}</td>
+                                                
+                                                @foreach($products as $product)
+                                                    @if($product->id == $pedido->product_id)
+                                                        <td>{{$product->name}}</td>
+                                                    @endif
+                                                @endforeach
+
+                                              
+
+                                               <!-- Mostrar solo la adición asociada al pedido -->
+                    @php
+                    $adicionSeleccionada = $adiciones->firstWhere('id', $pedido->adicion_id);
+                @endphp
+                <td>{{ $adicionSeleccionada ? $adicionSeleccionada->name : 'N/A' }}</td>
+                            
+                            
                                                 <td>{{$pedido->comentarios}}</td>
                                                 <td>{{$pedido->cantidad}}</td>
                                                 <td>
@@ -79,6 +92,7 @@
                                     </table>
                                 </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -96,6 +110,7 @@
             </div>
         </div>
     </div>
+
         
 
     <section class="my-4">
