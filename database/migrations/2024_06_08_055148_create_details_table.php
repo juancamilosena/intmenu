@@ -19,9 +19,7 @@ return new class extends Migration
             $table->string('adiciones')->nullable();
             $table->text('comentarios')->nullable();
             $table->integer('precio')->nullable();
-
-            $table->integer('cantidad')->nullable();
-            $table->text('comentarios')->nullable(); 
+            $table->integer('cantidad')->nullable(); 
             $table->timestamps();
 
 

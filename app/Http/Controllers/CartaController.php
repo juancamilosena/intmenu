@@ -14,16 +14,15 @@ class CartaController extends Controller
   
     public function carta()
     {
-        
         $order = Order::firstOrCreate(
             ['status' => 'pending'], 
             ['order_date' => now(), 'status' => 'pending']
         );
-
+    
         $products = Product::all();
         $adiciones = Adicion::all();
         $pedidos = Detail::where('order_id', $order->id)->get();
-
+    
         return view('User.carta', compact('products', 'adiciones', 'pedidos', 'order'));
     }
 
