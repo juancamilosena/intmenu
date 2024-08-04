@@ -73,9 +73,51 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="mb-3">
                                 <label class="text-light fw-bold" for="comentarios">Comentarios</label>
                                 <textarea name="comentarios" class="form-control" id="comentarios" rows="3" placeholder="Sugerencias"></textarea>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6 d-flex align-items-start justify-content-start">
+                                        <img class="img-comida" src="{{ asset('/img/hamburguesa.jpg') }}" class="card-img-top" alt="Imagen 1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Contenido del modal -->
+                                        <form action="{{route('detail.store')}}" method="POST" id="form_carta_{{$product->id}}">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold" for="cars">Adiciones</label>
+                                                <select name="adiciones" id="cars" class="form-select">
+                                                    @foreach ($adiciones as $adicion)
+                                                    <option value="{{$adicion->id}}">{{$adicion->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold" for="comment">Comentarios</label>
+                                                <textarea name="comentarios" class="form-control" id="comment" rows="3" placeholder="Sugerencias"></textarea>
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <p class="card-text text-success">${{ $product->precio }}</p>
+                                                
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label class="text-light fw-bold" for="tentacles">Cantidad</label>
+                                                <input type="number" id="tentacles" name="cantidad" class="form-control-sm rounded-pill custom-input" min="1" max="100" />
+                                            </div>
+                
+                                            <input type="text" name="id_producto" value="{{$product->id}}" hidden>
+                                            
+                
+                
+                                        </form>
+                                    </div>
+                                </div>
+
                             </div>
                         
                             <div class="mb-3">
@@ -226,6 +268,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row">
                     <!-- Botones de pie de página -->
                     <div class="mb-3 mb-md-0">
@@ -235,6 +278,113 @@
                         <button type="button" class="btn btn-warning">
                             <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
                         </button>
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--Modal check out-->
+                <div class="modal fade custom-modal-bottom" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog custom-modal-dialog modal-xl  modal-dialog-centered modal-dialog-scrollable modal-full-height-bottom">
+                        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5 text-light fw-bolder" id="exampleModalLabel">Carrito</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Contenido del modal -->
+                                        <form>
+                                            @csrf
+                                            <div class="checkout-table">
+                                                <table class="table table-striped table-bordered table-hover w-100">
+                                                    <thead class="bg-ingo text-white">
+                                                        <tr>
+                                                            <th scope="col">Producto</th>
+                                                            <th scope="col">Adiciones</th>
+                                                            <th scope="col">Comentarios</th>
+                                                            <th scope="col">Precio</th>
+                                                            <th scope="col">Cantidad</th>
+                                                            <th scope="col">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        @foreach($pedidos as $pedido)
+                                                        <tr>
+                                                            <th>{{$pedido->id}}</th>
+                                                           {{-- @foreach($adiciones as $adicion)
+                                                           <p>{{$adicion->id}}>{{$adicion->name}}</p>     
+                                                           @endforeach --}}
+                                                           <td>{{$pedido->adiciones}}</td>
+                                                            <td>{{$pedido->comentarios}}</td>
+                                                            <td>{{$pedido->precio}}</td>
+                                                            <td>{{$pedido->cantidad}}</td>
+                                                            <td>
+                                                                <a href="{{route('delete', $pedido->id)}}" class="btn btn-danger btn-sm">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between align-items-center flex-column flex-md-row">
+                                <!-- Botones de pie de página -->
+                                <div class="mb-3 mb-md-0">
+                                    <a href="/MenuComidas"><img src="img/izquierda.png" alt=""></a>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-warning">
+                                        <img class="boton-carrito text-light" src="img/cubiertos2.png" alt="">Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
